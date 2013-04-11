@@ -35,6 +35,23 @@ function checkExtensionVersion(extension) {
   localStorage[extension.id] = extension.version;
 }
 
+function checkChromeVersion() {
+		if(getChromeVersion() != localStorage["ver"]) {
+				localStorage["prev_ver"] = localStorage["ver"];
+				localStorage["ver"] = getChromeVersion();
+				
+				var chtext = 'From: ' + localStorage["prev_ver"] + '\nTo: ' + localStorage["ver"];
+				var notification = webkitNotifications.createNotification('chrome.png','Google Chrome Updated',chtext);
+				notification.show();
+		}
+}
+
+function getChromeVersion() {
+  return window.navigator.appVersion.match(/Chrome\/(\S+) /)[1];
+}
+
+checkChromeVersion();
+
 chrome.management.getAll(function (extensions) {
 
   // Store versions of installed extensions once
@@ -43,6 +60,7 @@ chrome.management.getAll(function (extensions) {
   });
 
   // Show a notification each time a new version of an extension is installed
+  //chrome.management.onEnabled.addListener(checkExtensionVersions);
   chrome.management.onInstalled.addListener(function (extension) {
     checkExtensionVersion(extension);
   });
