@@ -2,7 +2,7 @@
    "background": {
       "scripts": [ "background.js" ]
    },
-   "description": "Google Chrome Extension update desktop notifications",
+   "description": "Chrome & Extension Update Notifier",
    "icons": {
       "128": "128.png",
       "16": "16.png",
@@ -13,5 +13,5 @@
    "manifest_version": 2,
    "name": "FYI",
    "permissions": ["management", "tabs", "notifications"],
-   "version": "1.2.0",
+   "version": "1.2.1",
 }
