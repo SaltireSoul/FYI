@@ -1,5 +1,3 @@
-if (webkitNotifications) {
-
 // Helper function to show a notification
 function showNotification(extension) {
 
@@ -65,8 +63,3 @@ chrome.management.getAll(function (extensions) {
     checkExtensionVersion(extension);
   });
 });
-
-} else {
-    // Show a new tab with an error message.
-    chrome.tabs.create({url: 'error.html'});
-}

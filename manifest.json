@@ -10,8 +10,12 @@
       "48": "48.png",
       "64": "64.png"
    },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC7ngWcraaAHsoQCNLlEgKRmFhfeCGIF/mNACdQpXK0O4W+N3BEMrBKxdOJZKDu7CLCQneZo+JfGpnWxj9ljkgxzr92QF3G0oW+CoCxVx/SYJivAYZjcju/gJl5qFk/kMwUDWtNvCH9Q1kiCJkxfaIAzYdCpbuBHyoZl9WUu/uSvQIDAQAB",
    "manifest_version": 2,
+   "minimum_chrome_version": "28",
    "name": "FYI",
-   "permissions": ["management", "tabs", "notifications"],
-   "version": "1.2.1",
+   "optional_permissions": [ "https://chrome.google.com/*" ],
+   "permissions": ["management", "tabs", "notifications", "storage"],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.2.2"
 }
